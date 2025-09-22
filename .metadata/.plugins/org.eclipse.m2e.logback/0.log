@@ -21,3 +21,6 @@
 2025-09-22 20:58:35,484 [Worker-10: Launching MoneyTrex2 - MoneyTrex2Application] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2025-09-22 20:58:35,509 [Worker-10: Launching MoneyTrex2 - MoneyTrex2Application] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2025-09-22 20:58:35,517 [Worker-10: Launching MoneyTrex2 - MoneyTrex2Application] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\MoneyTrex\MoneyTrex2\src\test\resources
+2025-09-22 21:00:05,134 [Worker-2: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-22 21:00:05,156 [Worker-2: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-22 21:00:05,166 [Worker-2: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\MoneyTrex\MoneyTrex2\src\test\resources
