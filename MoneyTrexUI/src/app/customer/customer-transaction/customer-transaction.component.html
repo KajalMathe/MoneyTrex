@@ -1,0 +1,94 @@
+<div id="contact" class="contact-us section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 wow fadeInRight" data-wow-duration="0.5s" data-wow-delay="0.25s">
+          <form id="contact" #myform="ngForm" (submit)="makeTrans(myform)">
+            <div class="row">
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="text" name="title" ngModel placeholder="Title">
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="date" name="entrydate" ngModel>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <select name="type" ngModel class="form-select"> 
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                  </select>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <input type="number" name="amount" ngModel placeholder="amount">
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <textarea name="description" type="text" class="form-control" ngModel placeholder="Description"></textarea>  
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                  <button class="main-button ">Save Transaction</button> &nbsp;&nbsp; {{msg}}
+                </fieldset>
+              </div>
+            </div>
+            <div class="contact-dec">
+              <img src="assets/assets/images/contact-decoration.png" alt="">
+            </div>
+          </form>
+          <table class="table">
+                <thead>
+                    <tr>
+                        <th>S.No.</th>
+                        <th>Title(Type)</th>
+                        <th>Trasanction Details</th>
+                        <th>Trans Date</th>
+                        <th>Amount</th>
+                        <th>Operation</th>
+                    </tr>
+                </thead>
+          <tbody>
+            <ng-container *ngFor="let key of getKeys()">
+              <tr class="table-info">
+                <th>
+                  {{key}}
+                </th>                
+                <th colspan="4">
+                  Limit Balance : {{getBalance(key)}}
+                </th>
+              </tr>
+              <tr *ngFor="let tran of getRecords(key);let i=index">
+                <td>{{i+1}}</td>
+                <td>
+                  <b>{{tran.title}} , ({{tran.type}})</b>
+                  <br>
+                  &nbsp;&nbsp; {{tran.desc}}
+                </td>
+                <td>
+                  {{tran.trans_date}}
+                </td>
+                <td>
+                  {{tran.amount}}
+                </td>
+                <td>
+                  <a [routerLink]="['/customer/transupdate', tran.trans_id]">
+                    <b class="btn-sm btn-warning">Update</b>
+                  </a>
+
+                  &nbsp;
+                  <button class="btn-sm btn-danger" (click)="delTrans(tran.trans_id)">Delete</button>
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

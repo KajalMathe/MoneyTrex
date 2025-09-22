@@ -1,0 +1,45 @@
+<div id="contact" class="contact-us section">
+    <div class="container">
+      <div class="row">
+
+        <div *ngIf="limit==null" class="col-lg-6 wow fadeInRight" data-wow-duration="0.5s" data-wow-delay="0.25s">
+          <form id="contact" #myform="ngForm" (submit)="addLimit(myform)">
+            <div class="row">
+              <div class="col-lg-12">
+                <fieldset>
+                  <input type="text" class="form-control"  placeholder="Title" ngModel name="title">
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <input type="number" class="form-control" placeholder="Enter Limit"  ngModel name="limits">
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <button class="main-button ">Set The Limit</button>
+                </fieldset>
+              </div>
+          </div>
+            <div class="contact-dec">
+              <img src="assets/assets/images/contact-decoration.png" alt="">
+            </div>
+          </form>
+        </div>
+
+        <div *ngIf="limit!=null" class="col-lg-6 wow fadeInRight" data-wow-duration="0.5s" data-wow-delay="0.25s">
+        <div class="card" style="width: 18rem;">
+          <img src="../../../assets/assets/images/currency.jpg" class="card-img-top">
+          <div class="card-body">
+          <h5 class="card-title">Transaction Limit</h5>
+          <p class="card-text">Your Expense Limit is : {{ limit.limits}}</p>
+          <button class="btn btn-danger" (click)="del()">Remove Limit</button>
+        </div>
+        </div>
+        </div>
+
+   
+      </div>
+    </div>
+  </div>
+
